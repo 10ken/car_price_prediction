@@ -151,3 +151,80 @@ The top 3 selling manufacture years is 2013, 2012, 2017.
 *Refer to table*
 The table highlights that the majority of sales are attributed to first owners of manual cars, representing over half of the total sales volume.
 
+
+# 3.0 Cleaning Data Preparation for ML Modelling
+
+## 3.1 Clean Year
+
+- The reference point will be the year 2000, serving as our starting time at 0 and year 2020 will be at time 20.
+
+- This designation is significant as the column relates to time, a crucial aspect of our analysis.
+
+## 3.2 Clean Unnecessary Columns
+
+- dropped Unnamed: 0 since there is no meaning to a unique identifier
+
+- dropped max_power (in bhp) since
+    1. it has a very strong correlation with Engine (CC)
+    2. has outliers whereas Engine (CC) does not have outliers
+
+-`Mileage Unit` is 99% the same value. This does not provide value information for the model's learning. Therefore this will also be removed.
+
+
+## 3.3 Clean Outliers
+
+- The outliers for `km_driven` has been updated to become the upper thresholds.
+
+- Note the outliers from max_power does not need to be updated since that column has been removed.
+
+## 3.4 Standardization
+
+-`km_driven` has been standardized.
+
+- The other variables was not standardized since it either held a time series value or it was an item characteristic.
+
+## 3.5 Clean Categorical Variables
+
+**Convert transmission values to boolean, [0. 1]**
+
+Label meanings for 'transmission':
+
+0: Automatic
+
+1: Manual
+
+**Owner has numerical significance**
+
+owner
+
+First Owner             1325
+
+Second Owner             586
+
+Third Owner              146
+
+Fourth & Above Owner      37
+
+Test Drive Car             1
+
+**The categorical variable `owner` was changed to a numeric variable because it has numerical meaning.**
+
+owner
+
+1    1325
+
+2     586
+
+3     146
+
+4      37
+
+0       1
+
+The categorical variable `owner` was changed to a numeric variable because it has numerical meaning.
+
+**One Hot Encode the remaining categorical variables**
+
+After cleaning the categorical variables, 11 features have been increased to 25 features.
+
+
