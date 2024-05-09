@@ -296,7 +296,14 @@ With tuning, the performance has moved up to RMSE of 68,807 and an average cross
 
 # 8. Evaluation
 
-With tuning, the performance has moved up to RMSE of 68,807 and an average cross validation of 75,954. Better on both sides but still underfitted.
+The initial XGBoost Regression model showcased the most promising outcome with a root mean squared error of 67,923 in current units. However, its average cross-validation RMSE stood at 78,036, indicating potential overfitting to the training data. Despite this, it outperformed other models with default settings on the test data.
+
+After fine-tuning, the model's test RMSE slightly increased to 70,124, while the train cross-validation improved to 77,912. Although this refinement exacerbated the model's tendency to overfit, it did enhance performance on the training cross-validation set.
+
+Ultimately, the default parameters delivered the most favourable outcomes.
+
+## 8.1 Set best params for xgboost
+best_params_dict['Xgboost'] = xgb_params
 
 
 # 9.0 Business impacts and implications
