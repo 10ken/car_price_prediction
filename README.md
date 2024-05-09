@@ -236,5 +236,13 @@ There are 10 well defined clusters between `km_driven` and `Engine (CC)`.
 There are 2 well defined clusters between `year` and `Mileage`.
 
 
+# 5.0 Train Test Split
 
+After splitting the data into training and testing sets, it's essential to reconsolidate and execute all prior cleaning and feature engineering procedures exclusively on the training dataset.
+
+80% training and 20% testing data split.
+
+In this step, the data cleaning, processing, and feature engineering was consolidated into helper functions for easy reusability.
+
+6.0 Regression with Cross Validation
 
