@@ -254,24 +254,24 @@ Testing dataset has 419 rows and 27 columns.
 
 1) Multivariate Linear Regression, using MSE
 
-	- Test RMSE: 144,323
-	- Train RMSE: 114,885
-	- Average Cross Validation RMSE 116,248
+	- Test RMSE: 110,000
+	- Train RMSE: 120,243
+	- Average Cross Validation RMSE 121,710
 	- This model is  not a good fit for this data.
 
 2) XGBoost Regression, using RMSE
 	
-	- Test RMSE: 68,265
-	- Train RMSE: 30,035
-	- Average Cross Validation RMSE 78,377
+	- Test RMSE: 67,923
+	- Train RMSE: 2,9043
+	- Average Cross Validation RMSE 78,036
 
 	- This model under fit the training data but was the best performing of all models.
 
 3) Random Forest Model, using RMSE
 
-	- Test RMSE: 72,503
-	- Train RMSE: 32,456
-	- Average Cross Validation RMSE 81,773
+	- Test RMSE: 70,753
+	- Train RMSE: 31,994
+	- Average Cross Validation RMSE 81,402
 	
 	- Second best performing model. Also under fitted.
 
@@ -289,7 +289,7 @@ XGBoost Regression yielded the best result of 68,265 root mean squared error cur
 
 # 7.0 Hyperparameter Tuning
 
-Performed a total of 52 rounds of tuning across 3 models and various parameters, including L1 and L2 regularization.
+Performed a total of 60 rounds of tuning across 3 models and various parameters, including L1 and L2 regularization.
 
 With tuning, the performance has moved up to RMSE of 68,807 and an average cross validation of 75,954. Better on both sides but still underfitted.
 
