@@ -227,4 +227,14 @@ The categorical variable `owner` was changed to a numeric variable because it ha
 
 After cleaning the categorical variables, 11 features have been increased to 25 features.
 
+# 4.0 Feature Engineering
+
+*Refer to plot*
+There are 10 well defined clusters between `km_driven` and `Engine (CC)`.
+
+*Refer to plot*
+There are 2 well defined clusters between `year` and `Mileage`.
+
+
+
 
