@@ -56,9 +56,9 @@ This dataset was is from Kaggle with the intention of predicting used car sales.
 
 To better understand the data and projections of future car sales with the given data, we want to answer four questions.
 
-**1.** How has the demand changed over the years between 2000 to 2020?
+**1.** What 3 year range of manufacture years are the most popular?
 
-**2.** How does the number of driven kilometers affect the price?
+**2.** How does the number of driven kilometres affect the price?
 
 **3.** What are some of the most attractive features when buying a used car?
 
@@ -244,5 +244,90 @@ After splitting the data into training and testing sets, it's essential to recon
 
 In this step, the data cleaning, processing, and feature engineering was consolidated into helper functions for easy reusability.
 
-6.0 Regression with Cross Validation
+Training dataset has 1676 rows and 27 columns.
 
+Testing dataset has 419 rows and 27 columns.
+
+# 6.0 Regression with Cross Validation
+
+4 Models with cross validation was used.
+
+1) Multivariate Linear Regression, using MSE
+
+	- Test RMSE: 144,323
+	- Train RMSE: 114,885
+	- Average Cross Validation RMSE 116,248
+	- This model is  not a good fit for this data.
+
+2) XGBoost Regression, using RMSE
+	
+	- Test RMSE: 68,265
+	- Train RMSE: 30,035
+	- Average Cross Validation RMSE 78,377
+
+	- This model under fit the training data but was the best performing of all models.
+
+3) Random Forest Model, using RMSE
+
+	- Test RMSE: 72,503
+	- Train RMSE: 32,456
+	- Average Cross Validation RMSE 81,773
+	
+	- Second best performing model. Also under fitted.
+
+
+4) Support Vector Machine Regression
+
+	- Test RMSE: 217,432
+	- Train RMSE: 238,324
+	- Average Cross Validation RMSE 238,320
+
+	- Worse than linear regression.
+
+
+XGBoost Regression yielded the best result of 68,265 root mean squared error current units.The average cross validation RMSE for this model was 78,377. This means this model is overfitting the training data although it has the best performance on the test data.
+
+# 7.0 Hyperparameter Tuning
+
+Performed a total of 52 rounds of tuning across 3 models and various parameters, including L1 and L2 regularization.
+
+With tuning, the performance has moved up to RMSE of 68,807 and an average cross validation of 75,954. Better on both sides but still underfitted.
+
+
+# 8. Evaluation
+
+With tuning, the performance has moved up to RMSE of 68,807 and an average cross validation of 75,954. Better on both sides but still underfitted.
+
+
+# 9.0 Business impacts and implications
+
+## 9.1 Answer Research Questions
+
+**1.** What 3 year range of manufacture years are the most popular?
+
+Used cars that were manufactured in 2012 to 2014 were the most popular.
+
+**2.** How does the number of driven kilometres affect the price?
+
+While no universal trend emerges between kilometres driven and selling price, an interesting observation surfaces when examining cars with higher mileage.
+
+Specifically, for vehicles surpassing 125,000 kilometres, there appears to be a slight inclination toward lower selling prices.
+
+**3.** What are some of the most important features when buying a used car?
+
+The 3 most important features are `km_driven`, `year`, and `Mileage`.
+
+**4.** What can we expect from the used car sales market for used car prices that are manufactured over the next 5 years between 2021 to 2025?
+
+We are able to make predictions for 2021-2025.
+We can see our predicted value and the estimated value.
+
+Depending on the instance, the predicted value can be higher or lower than the estimated value with 1%.
+
+# 10 Limitations And Next Steps
+
+1) A larger dataset is essential for achieving a more comprehensive understanding of patterns and relationships.
+
+2) Enhance the dataset by incorporating additional details about the cars, such as their models and features.
+
+3) The insights derived from this dataset are constrained by its limited scope and scenarios.
